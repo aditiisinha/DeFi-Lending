@@ -2,9 +2,98 @@
 .my-nft-container {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 2rem;
   color: white;
+}
+
+.nft-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fcfdfd;
+  margin-bottom: 2rem;
+  text-shadow: 0px 0px 10px rgba(22, 163, 74, 0.5);
+}
+
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.nft-card {
+  background: rgba(1, 24, 20, 0.95);
+  border-radius: 14px;
+  border: 2px solid #acebc2;
+  box-shadow: 0px 4px 10px rgba(230, 247, 236, 0.3);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+}
+
+.nft-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nft-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nft-info {
+  padding: 1.5rem;
+}
+
+.nft-name {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: #fcfdfd;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+
+.nft-token-id,
+.nft-collection,
+.nft-mint-date {
+  margin: 0.5rem 0;
+  color: #acebc2;
+  font-size: 1rem;
+}
+
+.nft-status {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: rgba(230, 247, 236, 0.1);
+}
+
+.status-badge {
+  font-weight: 600;
+  color: #22c55e;
+  text-shadow: 0px 0px 3px rgba(22, 163, 74, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nft-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nft-image-container {
+    height: 250px;
+  }
 }
 
 /* Animated background from deposit.css */

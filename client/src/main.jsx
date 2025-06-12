@@ -9,7 +9,15 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NFTProvider>
     <App />
-    <ToastContainer autoClose={3000} />
+    <ToastContainer 
+  autoClose={3000}
+  position="top-center"
+  style={{
+    top: '80px',
+    zIndex: 9999,
+    maxWidth: '400px'
+  }}
+/>
     </NFTProvider>
   </StrictMode>,
 )

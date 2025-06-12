@@ -13,9 +13,6 @@
 /* Title */
 .invest-title {
   font-size: 2.5rem;
-  color: #16a34a; /* Green */
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px rgba(22, 163, 74, 0.5);
 }
 
 /* Empty State Text */
@@ -26,42 +23,107 @@
 
 /* Table Wrapper */
 .invest-table-container {
-  overflow-x: auto;
-  width: 100%;
-  max-width: 800px;
+  background: rgba(1, 24, 20, 0.95);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 2px solid #acebc2;
+  box-shadow: 0px 4px 10px rgba(230, 247, 236, 0.3);
+  text-align: center;
+  width: 80%;
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
 }
 
 /* Table */
 .invest-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #0e493c; /* Dark slate like deposit box */
-  border: 2px solid #16a34a; /* Green border */
-  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
-  border-radius: 12px;
-  overflow: hidden;
+  margin-top: 2rem;
 }
 
 /* Table Cells */
 .invest-table th,
 .invest-table td {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: left;
-  border-bottom: 1px solid #083f41;
+  border-bottom: 1px solid #acebc2;
 }
 
 /* Table Header */
 .invest-table th {
-  background-color: #0b3f3b;
-  color: #16a34a;
-  font-weight: bold;
+  background-color: rgba(230, 247, 236, 0.1);
+  font-weight: 600;
+  color: #fcfdfd;
+  font-size: 1.1rem;
 }
 
 /* Hover Effect */
 .invest-table tr:hover {
-  background-color: #2a2a3d;
+  background-color: rgba(230, 247, 236, 0.1);
+  transition: background-color 0.3s ease;
 }
 
+.invest-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status indicators */
+.status-active {
+  color: #22c55e;
+  font-weight: 600;
+  text-shadow: 0px 0px 5px rgba(22, 163, 74, 0.5);
+}
+
+.status-pending {
+  color: #ffc107;
+  font-weight: 600;
+  text-shadow: 0px 0px 5px rgba(255, 193, 7, 0.5);
+}
+
+.status-completed {
+  color: #16a34a;
+  font-weight: 600;
+  text-shadow: 0px 0px 5px rgba(22, 163, 74, 0.5);
+}
+
+/* Amount styling */
+.amount-value {
+  font-weight: 600;
+  color: #fcfdfd;
+  font-size: 1.1rem;
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Duration styling */
+.duration-value {
+  font-style: italic;
+  color: #fcfdfd;
+  font-size: 1.1rem;
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Coin icon styling */
+.coin-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #acebc2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .invest-table th,
+  .invest-table td {
+    padding: 1rem;
+  }
+  
+  .invest-title {
+    font-size: 1.8rem;
+  }
+}
 
 html, body {
   height: 100%;

@@ -18,8 +18,7 @@ const cardData = [
   { title: 'BUY NFTs', icon: <FaShoppingCart />, route: '/buy-nft' },
   { title: 'MINT NFTs', icon: <FaPaintBrush />, route: '/mint-nft' },
   { title: 'MY NFTs', icon: <FaImage />, route: '/my-nft' },
-  { title: 'Dashboard', icon: <FaTachometerAlt />, route: '/dashboard' },
-  { title: 'Connect Wallet', icon: <FaPlug />, route: '/walletconnect' }
+  { title: 'Dashboard', icon: <FaTachometerAlt />, route: '/dashboard' }
 ];
 
 const Home = () => {

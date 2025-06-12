@@ -25,14 +25,14 @@
 .card-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 150%;
-  max-width: 1000px;
-  min-height: 150px;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 300px;
   padding: 1rem;
   background: transparent;
   position: relative;
   z-index: 0;
+  margin: 0 auto;
 }
 
 /* ---------- Individual Cards ---------- */
@@ -40,14 +40,21 @@
   background-color: rgba(4, 25, 22, 0.9);
   border: 2px solid #ffffff;
   border-radius: 20px;
-  padding: 2.5rem 1rem;
+  padding: 1.5rem 1rem;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
+  width: 100%;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -55,10 +62,9 @@
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.04);
-  background-color: rgba(13, 35, 33, 0.95);
-  border-color: #ffffff;
-  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.15);
+  background-color: rgba(4, 25, 22, 0.95);
 }
 
 /* Hover Glow Accent */

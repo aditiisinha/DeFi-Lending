@@ -1,58 +1,74 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../styles/myInvestment.css'; // Make sure the file name is correct
+import React from 'react';
+import '../styles/myInvestment.css';
 
-const URL = 'http://localhost:5000'; // Update if your backend URL differs
+const sampleInvestments = [
+    {
+        id: 1,
+        coinName: 'Bitcoin',
+        coinIcon: 'BTC',
+        amount: '$5,000.00',
+        duration: '6 months',
+        status: 'active'
+    },
+    {
+        id: 2,
+        coinName: 'Ethereum',
+        coinIcon: 'ETH',
+        amount: '$3,500.00',
+        duration: '3 months',
+        status: 'pending'
+    },
+    {
+        id: 3,
+        coinName: 'Polygon',
+        coinIcon: 'MATIC',
+        amount: '$1,200.00',
+        duration: '12 months',
+        status: 'completed'
+    },
+    {
+        id: 4,
+        coinName: 'Solana',
+        coinIcon: 'SOL',
+        amount: '$2,800.00',
+        duration: '9 months',
+        status: 'active'
+    }
+];
 
-const Investments = () => {
-    const [investments, setInvestments] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`${URL}/user/invest`, {
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem('token')}`
-                    }
-                });
-                setInvestments(response.data.investments);
-            } catch (error) {
-                console.error('Error fetching investments:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
+const MyInvestments = () => {
     return (
         <div className="invest-container">
             <h1 className="invest-title">My Investments</h1>
-            {investments.length === 0 ? (
-                <p className="invest-empty">No investments available</p>
-            ) : (
-                <div className="invest-table-container">
-                    <table className="invest-table">
-                        <thead>
-                            <tr>
-                                <th>Investment</th>
-                                <th>Amount</th>
-                                <th>Duration</th>
+            <div className="invest-table-container">
+                <table className="invest-table">
+                    <thead>
+                        <tr>
+                            <th>Coin</th>
+                            <th>Amount</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sampleInvestments.map((investment) => (
+                            <tr key={investment.id}>
+                                <td>
+                                    <span className="coin-icon">{investment.coinIcon}</span>
+                                    {investment.coinName}
+                                </td>
+                                <td className="amount-value">{investment.amount}</td>
+                                <td className="duration-value">{investment.duration}</td>
+                                <td className={`status-${investment.status}`}>
+                                    {investment.status.charAt(0).toUpperCase() + investment.status.slice(1)}
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {investments.map((investment, index) => (
-                                <tr key={index}>
-                                    <td>{investment.coinName}</td>
-                                    <td>{investment.amount}</td>
-                                    <td>{investment.duration}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            )}
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
 
-export default Investments;
+export default MyInvestments;
