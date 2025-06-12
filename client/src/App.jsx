@@ -14,7 +14,7 @@ import PayLoan from "./pages/PayLoan";
 import InvestNow from "./pages/InvestNow";
 import MyInvestments from "./pages/MyInvestments";
 import MyNft from "./pages/MyNft";
-
+import BuyNft from "./pages/BuyNft";
 import MintNft from "./pages/MintNft";
 import Dashboard from "./pages/Dashboard";
 import ChatbotEmbed from "./CHATBOTEMBED.JS";
@@ -50,7 +50,7 @@ const AppContent = () => {
           <Route path="/invest" element={<InvestNow />} />
           <Route path="/my-investments" element={<MyInvestments />} />
           <Route path="/my-nft" element={<MyNft />} />
-
+          <Route path="/buy-nft" element={<BuyNft />} />
           <Route path="/mint-nft" element={<MintNft />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

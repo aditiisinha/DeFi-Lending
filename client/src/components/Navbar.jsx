@@ -139,6 +139,7 @@ const Navbar = () => {
                 navigate={navigate}
               >
                 <span to="/my-nft">My NFTs</span>
+                <span to="/buy-nft">Buy NFT</span>
                 <span to="/mint-nft">Mint NFT</span>
               </Dropdown>
 

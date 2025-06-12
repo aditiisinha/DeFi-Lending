@@ -63,6 +63,12 @@ const Lend = () => {
           <button type="submit" className="lend-button lend-button-lend">
             Deposit
           </button>
+          <button type="button" className="lend-button lend-button-cancel">
+            Cancel
+          </button>
+          <button type="button" className="lend-button lend-button-transactions">
+            View Transactions
+          </button>
         </div>
       </form>
     </div>
