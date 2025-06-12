@@ -62,12 +62,6 @@ const Borrow = () => {
           <button type="submit" className="borrow-button borrow-button-borrow">
             Submit
           </button>
-          <button type="button" className="borrow-button borrow-button-cancel">
-            Cancel
-          </button>
-          <button type="button" className="borrow-button borrow-button-transactions">
-            View Transactions
-          </button>
         </div>
       </form>
     </div>
