@@ -2,6 +2,7 @@ import User from '../models/User.js';
 import Invest from '../models/Invest.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+
 export const registerUser = async (req, res) => {
     try {
         const { username, fullname, email, password } = req.body;
@@ -81,7 +82,6 @@ export const loginUser = async (req, res) => {
     }
 }
 
-
 export const deposit = async (req, res) => {
   const { amount } = req.body;
   const userId = req.user.id;
@@ -125,7 +125,6 @@ export const borrowLoan = async (req, res) => {
   }
 };
 
-// PAY LOAN
 export const payLoan = async (req, res) => {
   const { amount } = req.body;
   const userId = req.user.id;
@@ -200,28 +199,27 @@ export const invest = async (req, res) => {
     }
 };
 
-// Add this to userController.js
 export const getDashboard = async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id).select('-password');
-    if (!user) return res.status(404).json({ message: 'User not found' });
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        if (!user) return res.status(404).json({ message: 'User not found' });
 
-    const investments = await Invest.find({ userId: req.user.id });
-    const cryptoInvestment = investments
-      .filter(i => i.coinName)  // assuming all are crypto
-      .reduce((acc, i) => acc + i.amount, 0);
+        const investments = await Invest.find({ userId: req.user.id });
+        const cryptoInvestment = investments
+          .filter(i => i.coinName)  // assuming all are crypto
+          .reduce((acc, i) => acc + i.amount, 0);
 
-    const restInvestment = 0; // Add logic if needed
+        const restInvestment = 0; // Add logic if needed
 
-    res.json({
-      userName: user.fullName,     
-      email: user.email,
-      wallet: user.wallet,
-      loan: user.loan,
-      cryptoInvestment,
-      restInvestment
-    });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
+        res.json({
+          userName: user.fullName,     
+          email: user.email,
+          wallet: user.wallet,
+          loan: user.loan,
+          cryptoInvestment,
+          restInvestment
+        });
+      } catch (err) {
+        res.status(500).json({ message: err.message });
+      }
+}
