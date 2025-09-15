@@ -15,7 +15,6 @@ const cardData = [
   { title: 'Pay Loan', icon: <FaCoins />, route: '/payloan' },
   { title: 'Invest Now', icon: <FaChartLine />, route: '/invest' },
   { title: 'My Investment', icon: <FaWallet />, route: '/my-investments' },
-  { title: 'BUY NFTs', icon: <FaShoppingCart />, route: '/buy-nft' },
   { title: 'MINT NFTs', icon: <FaPaintBrush />, route: '/mint-nft' },
   { title: 'MY NFTs', icon: <FaImage />, route: '/my-nft' },
   { title: 'Dashboard', icon: <FaTachometerAlt />, route: '/dashboard' }

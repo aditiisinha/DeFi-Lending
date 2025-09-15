@@ -112,7 +112,7 @@ const Dashboard = () => {
         {nfts.length === 0 ? (
           <div>
             <p>No NFTs minted yet.</p>
-            <Link to="/mintnft" className="dashboard-button mt-2 inline-block">Mint Now</Link>
+            <Link to="/mint-nft" className="dashboard-button mt-2 inline-block">Mint Now</Link>
           </div>
         ) : (
           <>
