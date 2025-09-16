@@ -121,5 +121,8 @@ Below are some UI snapshots of the DeFi Lending System:
 ![Pay Loan](./screenshots/PAY1.png)  
 ![Invest](./screenshots/Invest.png)  
 
+### 🖼️ NFT Trades
+![MyNFT](./screenshots/mynft.png)  
+
 ### 📊 Reports
 ![Similarity Report](./screenshots/similarity.png)  
